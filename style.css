@@ -44,6 +44,7 @@ header nav ul li a {
     color: rgb(20, 88, 36); /* Cor do texto para ficar visível sobre a imagem */
     text-decoration: none;
     font-size: 18px;
+    font-weight: bold; /* Deixa a letra mais grossa */
 }
 
 nav {
@@ -73,23 +74,34 @@ nav ul li a:hover {
 }
 
 /* Seção de logos */
+/* Estilo para as logos */
 .logos {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-    margin-bottom: 20px;
+    padding: 10px;
 }
 
-.logos img {
-    max-width: 150px;
-    height: auto;
-    transition: transform 0.3s ease-in-out;
+.logos .logo {
+    max-width: 100%; /* Faz a imagem nunca ultrapassar a largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+    width: 150px; /* Tamanho padrão da logo */
+    margin: 0 20px; /* Espaço entre as logos */
 }
 
-.logos img:hover {
-    transform: scale(1.05);
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .logos .logo {
+        width: 100px; /* Reduz o tamanho da logo em dispositivos menores */
+    }
 }
+
+@media (max-width: 480px) {
+    .logos .logo {
+        width: 80px; /* Ainda menor para dispositivos muito pequenos */
+    }
+}
+
 
 /* Seção de conteúdo */
 section {
