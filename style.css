@@ -44,7 +44,6 @@ header nav ul li a {
     color: rgb(20, 88, 36); /* Cor do texto para ficar visível sobre a imagem */
     text-decoration: none;
     font-size: 18px;
-    font-weight: bold; /* Deixa a letra mais grossa */
 }
 
 nav {
