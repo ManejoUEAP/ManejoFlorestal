@@ -73,6 +73,45 @@ nav ul li a:hover {
     color: #cfcfcf;
 }
 
+
+/** Estilos para o botão do menu (hambúrguer) */
+.menu-toggle {
+    display: none; /* Oculto em telas maiores */
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: rgb(20, 88, 36);
+    cursor: pointer;
+}
+
+/* Menu invisível em dispositivos móveis inicialmente */
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+/* Para telas menores, exibe o botão do menu e oculta os links */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão hambúrguer */
+        text-align: right;
+    }
+
+    .menu li {
+        display: block;
+        margin: 10px 0; /* Espaçamento vertical entre os links */
+    }
+
+    .menu.active {
+        display: flex; /* Exibe o menu ao clicar no hambúrguer */
+    }
+}
 /* Seção de logos */
 /* Estilo para as logos */
 .logos {
@@ -81,6 +120,7 @@ nav ul li a:hover {
     align-items: center;
     padding: 10px;
 }
+
 
 .logos .logo {
     max-width: 100%; /* Faz a imagem nunca ultrapassar a largura do container */
