@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    overflow-x: hidden; /* Evitar barra de rolagem horizontal */
 }
 
 /* Cabeçalho com menu de navegação */
@@ -23,6 +24,7 @@ header {
     text-align: center;
     padding-top: 20px;
     position: relative;
+    z-index: 1;
 
     /* Adiciona uma camada de cor semi-transparente para "diminuir" o fundo */
     background-color: rgba(241, 239, 239, 0.781);
@@ -57,11 +59,14 @@ nav {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    flex-wrap: wrap; /* Permitir quebra de linha em telas menores */
 }
 
 nav ul li a {
@@ -83,6 +88,10 @@ nav ul li a:hover {
     border: none;
     color: rgb(20, 88, 36);
     cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
 }
 
 /* Menu invisível em dispositivos móveis inicialmente */
@@ -96,6 +105,10 @@ nav ul li a:hover {
         display: none;
         flex-direction: column;
         width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(241, 239, 239, 0.9); /* Ficar visível e sobrepor o conteúdo */
     }
 
     .menu-toggle {
@@ -110,6 +123,11 @@ nav ul li a:hover {
 
     .menu.active {
         display: flex; /* Exibe o menu ao clicar no hambúrguer */
+        z-index: 2;
+    }
+
+    header {
+        height: auto; /* Ajusta o tamanho do cabeçalho para acomodar o menu expandido */
     }
 }
 
@@ -215,4 +233,3 @@ footer {
         margin: 10px 0;
     }
 }
-
