@@ -1,21 +1,38 @@
 /* Estilo global */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #04b904;
-    padding: 1rem;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
 }
+
+/* Cabeçalho com menu de navegação */
+/* Estilo para o cabeçalho */
+header {
+    background-image: url('capa.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 250px;
+    color: rgb(5, 34, 6);
+    text-align: center;
+    padding-top: 20px;
+
+    /* Adiciona uma camada de cor semi-transparente para "diminuir" o fundo */
+    background-color: rgba(241, 239, 239, 0.781); /* Cor preta com 50% de opacidade */
+    background-blend-mode: overlay; /* Mescla a cor de fundo com a imagem */
+}
+
 
 header nav ul {
     list-style: none;
-    text-align: center;
+    padding: 0;
 }
 
 header nav ul li {
@@ -24,9 +41,55 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: rgb(224, 213, 213);
+    color: rgb(20, 88, 36); /* Cor do texto para ficar visível sobre a imagem */
     text-decoration: none;
     font-size: 18px;
+    font-weight: bold; /* Deixa a letra mais grossa */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #cfcfcf;
+}
+
+/* Seção de logos */
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.logos img {
+    max-width: 150px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logos img:hover {
+    transform: scale(1.05);
 }
 
 /* Seção de conteúdo */
@@ -36,38 +99,52 @@ section {
     padding: 0 20px;
     text-align: center;
 }
-footer {
-    text-align: center;
-    background-color: #04b904;
-    color: white;
-    padding: 10px 0;
+
+h1 {
+    color: #028a0f;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #04b904;
+    background-color: #028a0f;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-}
-/* Estilo para a seção de logos no cabeçalho */
-.logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.logos .logo {
-    max-width: 150px;
-    margin: 0 20px;
+.btn:hover {
+    background-color: #026b0d;
 }
 
-.logos img {
-    width: 100%;
-    height: auto;
+/* Rodapé */
+footer {
+    text-align: center;
+    background-color: #028a0f;
+    color: white;
+    padding: 10px 0;
+    margin-top: 40px;
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .logos {
+        flex-direction: column;
+    }
 
+    nav ul li {
+        margin: 10px 0;
+    }
+}
